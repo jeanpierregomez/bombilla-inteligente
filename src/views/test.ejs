@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%=title%></title>
+    <%- include ('partials/head.html')%>
+</head>
+
+<body>
+    <%- include ('partials/navigation.html')%>
+    <div id=bombillo>
+        <img src="img/off.jpg" alt="">
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
+
+    <script type=text/javascript>
+        if (annyang) {
+            console.log("algo");
+            
+            var comandos = {
+                'encender': function(){
+                    let cambio = document.querySelector("#bombillo");
+                    cambio.children[0].src = "img/on.jpg";  
+                },
+                'apagar': function(){
+                    let cambio = document.querySelector("#bombillo");
+                    cambio.children[0].src = "img/off.jpg";
+                }
+            };
+
+            annyang.addCommands(comandos);
+            annyang.setLanguage("es-MX");
+
+            annyang.start();
+        }    
+    </script>   
+    <%- include('partials/footer.html')%>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+@media (max-height: 550px ), (max-width: 480px) {
+    img {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+@media (max-height: 430px), (max-width: 400px) {
+    img {
+        width: 210px;
+        height: 210px;
+    }
+}
+
+.contenido {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
