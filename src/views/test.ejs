@@ -6,37 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=title%></title>
     <%- include ('partials/head.html')%>
+    <link rel="stylesheet" href="css/home.css">
 </head>
 
 <body>
     <%- include ('partials/navigation.html')%>
-    <div id=bombillo>
-        <img src="img/off.jpg" alt="">
+    <div class="contenido">
+        <div class="col-lg-12 text-center my-auto bombillo" id="bombillo">
+            <img src="img/of.png" alt="bombilla" width="400px" height="400px" class="animated swing">
+        </div>
     </div>
 
     <script src="//cdnjs.cloudflare.com/ajax/libs/annyang/2.6.0/annyang.min.js"></script>
 
     <script type=text/javascript>
+        if (!annyang) {
+            alert("Lo siento, tu navegador no soporta el reconocimiento de voz;")
+        }
         if (annyang) {
-            console.log("algo");
             
             var comandos = {
                 'encender': function(){
                     let cambio = document.querySelector("#bombillo");
-                    cambio.children[0].src = "img/on.jpg";  
+                    cambio.children[0].src = "img/on.png";  
                 },
                 'apagar': function(){
                     let cambio = document.querySelector("#bombillo");
-                    cambio.children[0].src = "img/off.jpg";
+                    cambio.children[0].src = "img/of.png";
                 }
             };
 
             annyang.addCommands(comandos);
-            annyang.setLanguage("es-MX");
+            annyang.setLanguage("es-CO");
 
             annyang.start();
         }    
-    </script>   
+    </script>
     <%- include('partials/footer.html')%>
 </body>
 
