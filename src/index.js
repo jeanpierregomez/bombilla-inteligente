@@ -20,9 +20,6 @@ app.get("/download", (req, res) => {
       if (err) console.log(err);
     }
   );
-  res.render("index", {
-    title: "Home"
-})
 });
 
 //Static files
